@@ -1,7 +1,7 @@
 
-  # Portfolio
+  # Khaleel KL7 Portfolio
 
-  This is a code bundle for a portfolio website. The original project is available at https://www.figma.com/design/AV2RySwA91PAWPgnlaby3N/Create-portfolio-website.
+  This is a code bundle for Khaleel KL7 Portfolio. The original project is available at https://www.figma.com/design/AV2RySwA91PAWPgnlaby3N/Create-portfolio-website.
 
   ## Running the code
 
