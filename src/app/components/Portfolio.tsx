@@ -117,13 +117,6 @@ const portfolioItems: {
     src: "Social_media/Olio_love for royals.jpg",
   },
   {
-    id: "social-02",
-    category: "social",
-    title: "Olio × RR Post",
-    description: "Olio's collaboration post with Rajasthan Royals for the IPL campaign.",
-    src: "Social_media/Olio-RR-Post_V1.jpg",
-  },
-  {
     id: "social-04",
     category: "social",
     title: "We're RR Fans",
@@ -152,13 +145,6 @@ const portfolioItems: {
     src: "Social_media/OLIO-X-BFC_The-Blues-won-this-battle_V1.png",
   },
   {
-    id: "social-08",
-    category: "social",
-    title: "Olio Manipal — Contest Alert",
-    description: "Contest announcement creative for Olio's Manipal campus campaign.",
-    src: "Social_media/olio-manipal-contest-alert_1.jpg",
-  },
-  {
     id: "social-09",
     category: "social",
     title: "Olio & Juliet — Pizza",
@@ -185,13 +171,6 @@ const portfolioItems: {
     title: "Garlic Knots — Vol.2",
     description: "Second social creative in the garlic knots series for Olio.",
     src: "Social_media/Olio_garlic knots_sm_v2-02.jpg",
-  },
-  {
-    id: "social-14",
-    category: "social",
-    title: "Pick Your Pizza",
-    description: "Interactive social post inviting audiences to choose their favourite Olio pizza.",
-    src: "Social_media/Pick_Your_pizza_olio_v2-02.jpg",
   },
   {
     id: "social-15",
@@ -236,6 +215,13 @@ const portfolioItems: {
     src: "Social_media/Husl-bar_Whats-in-my-bag.jpg",
   },
   {
+    id: "social-21",
+    category: "social",
+    title: "Bright Smiles Fresh Outfits",
+    description: "Fashion-forward social creative with a bright and playful visual tone.",
+    src: "Social_media/Bright smiles Fresh outfits.png",
+  },
+  {
     id: "social-22",
     category: "social",
     title: "KOE — Varun Dhawan",
@@ -269,6 +255,41 @@ const portfolioItems: {
     title: "Design Work II",
     description: "Creative graphic design work from the portfolio collection.",
     src: "Social_media/IMG_5559.JPG",
+  },
+  {
+    id: "social-28",
+    category: "social",
+    title: "Gochu Jang Wings",
+    description: "Bold food campaign visual built around spicy flavour and product drama.",
+    src: "Social_media/Gochu jang Wings.jpg",
+  },
+  {
+    id: "social-29",
+    category: "social",
+    title: "KP Gochujang Fries",
+    description: "High-energy social media artwork promoting Gochujang fries with punchy styling.",
+    src: "Social_media/KP_Gochujang-fries_v1.jpg",
+  },
+  {
+    id: "social-30",
+    category: "social",
+    title: "Miniature Cleaners",
+    description: "Conceptual social artwork using miniature storytelling and surreal composition.",
+    src: "Social_media/Miniature Cleaners in a Cotton Landscape.jpg",
+  },
+  {
+    id: "social-31",
+    category: "social",
+    title: "TM Experience The Power",
+    description: "Campaign creative with bold product-led visuals and energetic messaging.",
+    src: "Social_media/TM_experience the power_v1.jpg",
+  },
+  {
+    id: "social-32",
+    category: "social",
+    title: "TM Ramadan Kareem",
+    description: "Festive social post designed for a Ramadan campaign with warm celebratory styling.",
+    src: "Social_media/TM_ramadan kareem_v1.jpg",
   },
 
   // ── Print & Flyers ─────────────────────────────────────────
