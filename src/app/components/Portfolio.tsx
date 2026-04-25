@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { Play, X, ZoomIn, ExternalLink, Film, ArrowRight } from "lucide-react";
+import { Play, X, ZoomIn, ExternalLink, ArrowRight } from "lucide-react";
 
 // ============================================================
 //  AUTO IMAGE LOADER
@@ -661,7 +661,7 @@ function BrandingBentoModal({
   onImageOpen: (item: (typeof portfolioItems)[0]) => void;
 }) {
   const accentRgb = hexToRgb(group.accent);
-  const items = group.items.slice(0, 6);
+  const items = group.items;
 
   const bentoStyles: Array<{ gridColumn: string; gridRow: string }> = [
     { gridColumn: "span 2", gridRow: "span 1" },
@@ -770,7 +770,7 @@ function BrandingBentoModal({
             padding: "24px 28px 28px",
             display: "grid",
             gridTemplateColumns: "repeat(3, 1fr)",
-            gridTemplateRows: "repeat(2, 220px)",
+            gridAutoRows: "220px",
             gap: "12px",
             maxHeight: "calc(90vh - 120px)",
             overflowY: "auto",
@@ -778,7 +778,7 @@ function BrandingBentoModal({
         >
           {items.map((item, index) => {
             const imgSrc = img(item.src);
-            const bStyle = bentoStyles[index] ?? {};
+            const bStyle = bentoStyles[index % bentoStyles.length] ?? {};
 
             return (
               <div
@@ -1330,7 +1330,7 @@ function EmptyState({ color, isVideos }: { color: string; isVideos: boolean }) {
       </h3>
       <p className="font-['Space_Grotesk'] text-sm text-gray-500">
         {isVideos
-          ? "Add entries to videoItems in Portfolio.tsx."
+          ? "Add local files to Assets/Video or Assets/video to show them here automatically."
           : "Add entries to portfolioItems in Portfolio.tsx with a matching category id."}
       </p>
     </div>
