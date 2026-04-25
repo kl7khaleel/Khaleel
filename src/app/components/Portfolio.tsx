@@ -112,16 +112,16 @@ const portfolioItems: {
   {
     id: "social-01",
     category: "social",
-    title: "Olio — Love for Royals",
-    description: "Social media post celebrating the royal love of Olio's brand identity.",
-    src: "Social_media/Olio_love for royals.jpg",
+    title: "Abetta Graduation",
+    description: "Graduation campaign creative designed for Abetta with an academic celebratory tone.",
+    src: "Social_media/Abetta-MTTC-RTTC-Graduation.jpg",
   },
   {
     id: "social-04",
     category: "social",
-    title: "We're RR Fans",
-    description: "Fan engagement post supporting Rajasthan Royals during the IPL season.",
-    src: "Social_media/We're-RR-fans.jpg",
+    title: "Abetta Eid Mubarak",
+    description: "Festive Eid Mubarak social media creative for the Abetta brand.",
+    src: "Social_media/Abetta_Eid mubarak_v1.jpg",
   },
   {
     id: "social-05",
