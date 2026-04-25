@@ -1107,21 +1107,6 @@ export function Portfolio() {
                     </div>
                   </div>
 
-                  {vidItem.type === "local" && (
-                    <div
-                      className="absolute top-3 left-3 flex items-center gap-1 px-2 py-0.5 rounded-full"
-                      style={{
-                        background: "rgba(255,154,0,0.18)",
-                        border: "1px solid rgba(255,154,0,0.4)",
-                      }}
-                    >
-                      <Film size={10} style={{ color: "#ff9a00" }} />
-                      <span className="font-['Space_Grotesk'] text-[10px] font-semibold" style={{ color: "#ff9a00" }}>
-                        LOCAL
-                      </span>
-                    </div>
-                  )}
-
                   <div
                     className="absolute bottom-0 left-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                     style={{ background: "linear-gradient(0deg, rgba(5,5,18,0.95) 0%, transparent 100%)" }}
