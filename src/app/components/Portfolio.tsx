@@ -722,6 +722,8 @@ function BrandingBentoModal({
             gridTemplateColumns: "repeat(3, 1fr)",
             gridTemplateRows: "repeat(2, 220px)",
             gap: "12px",
+            maxHeight: "calc(90vh - 120px)",
+            overflowY: "auto",
           }}
         >
           {items.map((item, index) => {
