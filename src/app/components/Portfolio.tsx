@@ -329,8 +329,6 @@ const portfolioItems: {
     src: "Flyer/IMG_5567.JPG",
   },
 
-  // ── Branding is loaded directly from local Branding folders ──
-
   // ── Packaging ─────────────────────────────────────────────
   {
     id: "pack-01",
@@ -367,7 +365,6 @@ const portfolioItems: {
     description: "Color-rich product packaging concept designed for a bold shelf presence.",
     src: "Package/A_vibrant_product_202604122105.jpg",
   },
-  
 ];
 
 // ============================================================
@@ -446,7 +443,7 @@ const BRANDING_GROUPS: BrandingGroup[] = Object.entries(
   }));
 
 // ============================================================
-//  BRANDING THUMBNAIL CARD (closed state — thumbnail mosaic + name only)
+//  BRANDING THUMBNAIL CARD
 // ============================================================
 function BrandingThumbCard({
   group,
@@ -556,7 +553,6 @@ function BrandingThumbCard({
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-          {/* accent dot */}
           <div
             style={{
               width: "8px",
@@ -595,7 +591,65 @@ function BrandingThumbCard({
 }
 
 // ============================================================
-//  BRANDING BENTO MODAL (expanded state — 5-6 bento grid)
+//  BRANDING SCROLL CONTAINER
+// ============================================================
+function BrandingScrollGrid({
+  groups,
+  onGroupClick,
+}: {
+  groups: BrandingGroup[];
+  onGroupClick: (group: BrandingGroup) => void;
+}) {
+  return (
+    <div style={{ position: "relative" }}>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
+          gap: "20px",
+        }}
+      >
+        {groups.map((group) => (
+          <BrandingThumbCard
+            key={group.id}
+            group={group}
+            onClick={() => onGroupClick(group)}
+          />
+        ))}
+      </div>
+
+      {/* Item count badge */}
+      <div
+        style={{
+          position: "absolute",
+          top: "10px",
+          right: "18px",
+          zIndex: 3,
+          padding: "3px 10px",
+          borderRadius: "999px",
+          background: "rgba(0,229,204,0.08)",
+          border: "1px solid rgba(0,229,204,0.18)",
+        }}
+      >
+        <span
+          style={{
+            fontFamily: "'Space Grotesk', sans-serif",
+            fontSize: "11px",
+            fontWeight: 600,
+            color: "rgba(0,229,204,0.6)",
+            letterSpacing: "0.05em",
+          }}
+        >
+          {groups.length} brands
+        </span>
+      </div>
+
+    </div>
+  );
+}
+
+// ============================================================
+//  BRANDING BENTO MODAL
 // ============================================================
 function BrandingBentoModal({
   group,
@@ -609,15 +663,13 @@ function BrandingBentoModal({
   const accentRgb = hexToRgb(group.accent);
   const items = group.items.slice(0, 6);
 
-  // Bento layout: item 0 = wide (spans 2 cols), rest normal
-  // Grid: 3 cols, 2 rows
   const bentoStyles: Array<{ gridColumn: string; gridRow: string }> = [
-    { gridColumn: "span 2", gridRow: "span 1" }, // large — top left
-    { gridColumn: "span 1", gridRow: "span 2" }, // tall — top right
-    { gridColumn: "span 1", gridRow: "span 1" }, // normal
-    { gridColumn: "span 1", gridRow: "span 1" }, // normal
-    { gridColumn: "span 1", gridRow: "span 1" }, // normal
-    { gridColumn: "span 1", gridRow: "span 1" }, // normal
+    { gridColumn: "span 2", gridRow: "span 1" },
+    { gridColumn: "span 1", gridRow: "span 2" },
+    { gridColumn: "span 1", gridRow: "span 1" },
+    { gridColumn: "span 1", gridRow: "span 1" },
+    { gridColumn: "span 1", gridRow: "span 1" },
+    { gridColumn: "span 1", gridRow: "span 1" },
   ];
 
   return (
@@ -702,12 +754,10 @@ function BrandingBentoModal({
               flexShrink: 0,
             }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLButtonElement).style.background =
-                "rgba(255,255,255,0.14)";
+              (e.currentTarget as HTMLButtonElement).style.background = "rgba(255,255,255,0.14)";
             }}
             onMouseLeave={(e) => {
-              (e.currentTarget as HTMLButtonElement).style.background =
-                "rgba(255,255,255,0.06)";
+              (e.currentTarget as HTMLButtonElement).style.background = "rgba(255,255,255,0.06)";
             }}
           >
             <X size={16} color="#fff" />
@@ -780,7 +830,6 @@ function BrandingBentoModal({
                   />
                 )}
 
-                {/* Bottom gradient + info */}
                 <div
                   style={{
                     position: "absolute",
@@ -820,7 +869,6 @@ function BrandingBentoModal({
                   </p>
                 </div>
 
-                {/* Zoom icon top-right */}
                 <div
                   style={{
                     position: "absolute",
@@ -843,7 +891,6 @@ function BrandingBentoModal({
                 >
                   <ZoomIn size={13} color="#fff" />
                 </div>
-
               </div>
             );
           })}
@@ -853,7 +900,7 @@ function BrandingBentoModal({
   );
 }
 
-// ── LocalVideoCard
+// ── LocalVideoCard ──────────────────────────────────────────
 function LocalVideoCard({ src, title }: { src: string; title: string }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const resolvedSrc = vid(src);
@@ -971,22 +1018,11 @@ export function Portfolio() {
           BRANDING_GROUPS.length === 0 ? (
             <EmptyState color={activeCat?.color ?? "#00e5cc"} isVideos={false} />
           ) : (
-          /* ── BRANDING: thumbnail cards grid ── */
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
-              gap: "20px",
-            }}
-          >
-            {BRANDING_GROUPS.map((group) => (
-              <BrandingThumbCard
-                key={group.id}
-                group={group}
-                onClick={() => setOpenBrandGroup(group)}
-              />
-            ))}
-          </div>
+            /* ── BRANDING: scroll container wrapping the grid ── */
+            <BrandingScrollGrid
+              groups={BRANDING_GROUPS}
+              onGroupClick={(group) => setOpenBrandGroup(group)}
+            />
           )
         ) : filteredImages.length === 0 && filteredVideos.length === 0 ? (
           <EmptyState
